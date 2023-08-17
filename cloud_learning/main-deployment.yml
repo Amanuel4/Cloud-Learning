@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    com.docker.project: cloud
+  name: cloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      com.docker.project: cloud
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        com.docker.project: cloud
+    spec:
+      containers:
+      - image: amanuel4/cloud-learning:3
+        name: cloud
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        resources: {}
+      restartPolicy: Always
+status: {}

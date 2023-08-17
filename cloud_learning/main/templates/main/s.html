@@ -1,0 +1,87 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href=" {% static 'plugins/bootstrap/bootstrap.min.css' %} ">
+  <!-- slick slider -->
+  <link rel="stylesheet" href=" {% static 'plugins/slick/slick.css' %} ">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href=" {% static 'plugins/themify-icons/themify-icons.css' %} ">
+  <!-- venobox css -->
+  <link rel="stylesheet" href=" {% static 'plugins/venobox/venobox.css' %} ">
+  <!-- card slider -->
+  <link rel="stylesheet" href=" {% static 'plugins/card-slider/css/style.css' %} ">
+
+  <!-- Main Stylesheet -->
+  <link href=" {% static 'css/style.css' %} " rel="stylesheet">
+  
+
+</head>
+<body>
+    
+
+    {% if items_page %}
+    {% for item in items_page %}
+    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <article class="card">
+          <img src=" {{item.image.url}} " alt="post-thumb" class="card-img-top mb-2">
+          <div class="card-body p-0">
+            <time>{{item.date}}</time>
+            <p>Author: {{blog.author}}</p>
+            <a href="/blog_detail/{{item.id}}" class="h4 card-title d-block my-3 text-dark hover-text-underline">{{item.title}}</a>
+            <a href="/blog_detail/{{item.id}}" class="btn btn-transparent">Read more</a>
+    {% endfor %}
+<br></br>
+<center>
+    {% if items_page.has_other_pages %}
+    <div class="btn-group" role="group" aria-label="Item pagination">
+        {% if items_page.has_previous %}
+            <a href="?page={{ items_page.previous_page_number }}" class="btn btn-outline-primary">Previous</a>
+        {% endif %}
+
+        {% for page_number in items_page.paginator.page_range %}
+            {% if items_page.number == page_number %}
+                <button class="btn btn-outline-primary active">
+                    <span>{{ page_number }} <span class="sr-only">  </span></span>
+                </button>
+            {% else %}
+                <a href="?page={{ page_number }}" class="btn btn-outline-primary">
+                    {{ page_number }}
+                </a>
+            {% endif %}
+        {% endfor %}
+
+        {% if items_page.has_next %}
+            <a href="?page={{ items_page.next_page_number }}" class="btn btn-outline-primary">Next</a>
+        {% endif %}
+    </div>
+    {% endif %}
+{% else %}
+    <p>No items found.</p>
+{% endif %}
+</center>
+<!-- jQuery -->
+<script src=" {% static 'plugins/jQuery/jquery.min.js' %} "></script>
+<!-- Bootstrap JS -->
+<script src=" {% static 'plugins/bootstrap/bootstrap.min.js' %} "></script>
+<!-- slick slider -->
+<script src=" {% static 'plugins/slick/slick.min.js' %} "></script>
+<!-- venobox -->
+<script src=" {% static 'plugins/venobox/venobox.min.js' %} "></script>
+<!-- shuffle -->
+<script src=" {% static 'plugins/shuffle/shuffle.min.js' %} "></script>
+<!-- apear js -->
+<script src=" {% static 'plugins/counto/apear.js' %} "></script>
+<!-- counter -->
+<script src=" {% static 'plugins/counto/counTo.js' %} "></script>
+<!-- card slider -->
+<script src=" {% static 'plugins/card-slider/js/card-slider-min.js' %} "></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src=" {% static 'plugins/google-map/gmap.js' %} "></script>
+
+<!-- Main Script -->
+<script src=" {% static 'js/script.js' %} "></script>
+</body>
+</html>

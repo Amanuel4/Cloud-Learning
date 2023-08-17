@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Safaricom Ethiopia</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="agen" />
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href=" {% static 'plugins/bootstrap/bootstrap.min.css' %} ">
+  <!-- slick slider -->
+  <link rel="stylesheet" href=" {% static 'plugins/slick/slick.css' %} ">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href=" {% static 'plugins/themify-icons/themify-icons.css' %} ">
+  <!-- venobox css -->
+  <link rel="stylesheet" href=" {% static 'plugins/venobox/venobox.css' %} ">
+  <!-- card slider -->
+  <link rel="stylesheet" href=" {% static 'plugins/card-slider/css/style.css' %} ">
+
+  <!-- Main Stylesheet -->
+  <link href=" {% static 'css/style.css' %} " rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href=" {% static 'images/favicon.ico' %} " type="image/x-icon">
+  <link rel="icon" href=" {% static 'images/favicon.ico' %} " type="image/x-icon">
+
+</head>
+
+<body>
+  
+
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <h1><a class="navbar-brand" href="/">Safaricom Ethiopia</a></h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#courses">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#blog">Blog</a>
+        </li> 
+        {% if request.user.is_authenticated%}
+          <li class="nav-item">
+          <a class="nav-link" href="#">{{request.user.username}}</a>
+          <li class="nav-item">
+            <a class="nav-link" href="logout/">Logout</a>
+          </li>
+        </li>
+        {%else%}
+        <li class="nav-item">
+          <a class="nav-link" href="admin/">Login</a>
+        </li>
+
+        {% endif%}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+<!-- banner -->
+<section class="banner bg-cover position-relative d-flex justify-content-center align-items-center"
+  data-background="{% static 'images/banner/banner2.jpg'%}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="display-1 text-white font-weight-bold font-primary">Learning Platform For Cloud Trainees</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /banner -->
+
+
+
+<!-- courses -->
+<section class="section" id="courses">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <h2 class="section-title">Our Courses</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.</p>
+        <div class="section-border"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative">
+              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
+              <i class="icon-lg icon-watermark text-white ti-palette"></i>
+            </div>
+            <h4 class="mb-4">Linux</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative">
+              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
+              <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
+            </div>
+            <h4 class="mb-4">Virtualization</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative">
+              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
+              <i class="icon-lg icon-watermark text-white ti-announcement"></i>
+            </div>
+            <h4 class="mb-4">Containerization</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative">
+              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-game mb-5 d-inline-block text-white"></i>
+              <i class="icon-lg icon-watermark text-white ti-game"></i>
+            </div>
+            <h4 class="mb-4">Automation</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative">
+              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-crown mb-5 d-inline-block text-white"></i>
+              <i class="icon-lg icon-watermark text-white ti-crown text-white"></i>
+            </div>
+            <h4 class="mb-4">Database</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative">
+              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-bar-chart mb-5 d-inline-block text-white"></i>
+              <i class="icon-lg icon-watermark text-white ti-bar-chart"></i>
+            </div>
+            <h4 class="mb-4">Monitoring</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /courses -->
+
+
+
+<!-- team -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <h2>Our Instructors</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+        <div class="section-border"></div>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-lg-4 col-sm-6">
+        <div class="card hover-shadow">
+          <img src=" {% static 'images/team/member-2.jpg' %} " alt="team-member" class="card-img-top">
+          <div class="card-body text-center position-relative zindex-1">
+            <h4><a class="text-dark" >Fitsum Taye</a></h4>
+            <i>Cloud Infrastructure Engineer</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-6">
+        <div class="card hover-shadow">
+          <img src=" {% static 'images/team/member-1.jpg' %} " alt="team-member" class="card-img-top">
+          <div class="card-body text-center position-relative zindex-1">
+            <h4><a class="text-dark" >Marylene Jempkombi</a></h4>
+            <i>Senior Operations Engineer</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-6">
+        <div class="card hover-shadow">
+          <img src=" {% static 'images/team/member-2.jpg' %} " alt="team-member" class="card-img-top">
+          <div class="card-body text-center position-relative zindex-1">
+            <h4><a class="text-dark" >Joseph Njogu</a></h4>
+            <i>Senior Engineer</i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- /team -->
+
+
+
+
+<!-- call to action -->
+<section>
+  <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-1">
+      <h2 class="text-gradient-primary">Let's Start With Us!</h2>
+      <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
+      <a href=" {% static 'contact.html' %} " class="btn btn-lg btn-primary">Let’s talk</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- /call to action -->
+
+
+
+<!-- blog -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <h2>Latest Blogs</h2>
+        <div class="section-border"></div>
+      </div>
+    </div>
+    <div class="row">
+      {% for blog in blogs%}
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <article class="card">
+          <img src=" {{blog.image.url}} " alt="post-thumb" class="card-img-top mb-2">
+          <div class="card-body p-0">
+            <time>{{blog.date}}</time>
+            <p>Author: {{blog.author}}</p>
+            <a href="/blog_detail/{{blog.id}}" class="h4 card-title d-block my-3 text-dark hover-text-underline">{{blog.title}}</a>
+            <a href="/blog_detail/{{blog.id}}" class="btn btn-transparent">Read more</a>
+          </div>
+        </article>
+        
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</section>
+<!-- /blog -->
+
+<!-- footer -->
+<footer class="bg-secondary position-relative">
+  <img src=" {% static 'images/backgrounds/map.png' %} " class="img-fluid overlay-image" alt="">
+  <div class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        
+      </div>
+    </div>
+  </div>
+  <div class="pb-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left">
+          <p class="text-light mb-0">Copyright &copy; 2023  by <a class="text-gradient-primary" href="https://www.linkedin.com/in/aman-essa-04a62a205/m">Aman Essa</a>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-inline text-md-right text-center">
+            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-instagram"></i></a></li>
+            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src=" {% static 'plugins/jQuery/jquery.min.js' %} "></script>
+<!-- Bootstrap JS -->
+<script src=" {% static 'plugins/bootstrap/bootstrap.min.js' %} "></script>
+<!-- slick slider -->
+<script src=" {% static 'plugins/slick/slick.min.js' %} "></script>
+<!-- venobox -->
+<script src=" {% static 'plugins/venobox/venobox.min.js' %} "></script>
+<!-- shuffle -->
+<script src=" {% static 'plugins/shuffle/shuffle.min.js' %} "></script>
+<!-- apear js -->
+<script src=" {% static 'plugins/counto/apear.js' %} "></script>
+<!-- counter -->
+<script src=" {% static 'plugins/counto/counTo.js' %} "></script>
+<!-- card slider -->
+<script src=" {% static 'plugins/card-slider/js/card-slider-min.js' %} "></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src=" {% static 'plugins/google-map/gmap.js' %} "></script>
+
+<!-- Main Script -->
+<script src=" {% static 'js/script.js' %} "></script>
+
+</body>
+</html>
