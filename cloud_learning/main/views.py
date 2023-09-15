@@ -52,3 +52,6 @@ def pagination(request):
 	return render(request, 'main/s.html', {'items_page':items_page})
 
 
+def playbook(request):
+    
+    return render(request, 'main/playbook.html',{})

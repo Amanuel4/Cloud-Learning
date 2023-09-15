@@ -26,6 +26,7 @@ urlpatterns = [
     path("logout/", views.logout_request, name='logout'),
     path("blog_detail/<int:id>", views.blog_detail, name='blog_detail'),
     path('pag/',views.pagination, name= 'pagination'),
+    path('playbook/',views.playbook,name='playbook'),
     
     
     

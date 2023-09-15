@@ -12,3 +12,13 @@ class Blog(models.Model):
     date= models.DateTimeField(default = timezone.now)
     def __str__(self):
         return self.author+' '+ '('+ self.title +')'
+    
+    
+class Tasks(models.Model):
+    name = models.CharField(max_length=100)
+    
+    
+    
+    
+    def __str__(self):
+        return self.name
