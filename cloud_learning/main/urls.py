@@ -27,8 +27,15 @@ urlpatterns = [
     path("blog_detail/<int:id>", views.blog_detail, name='blog_detail'),
     path('pag/',views.pagination, name= 'pagination'),
     path('playbook/',views.playbook,name='playbook'),
-    
-    
+    path('adduser/',views.adduser,name='adduser'),
+    path('deleteuser/',views.deleteuser,name='deleteuser'),
+    path('lockuser/',views.lockuser,name='lockuser'),
+    path('install_sw/',views.install_sw,name='install_sw'),
+    path('remove_sw/',views.remove_sw,name='remove_sw'),
+    path('provision_cluster/',views.provision_cluster,name='provision_cluster'),
+    path('deprovision_cluster/',views.deprovision_cluster,name='deprovision_cluster'),
+    path('addinventory/',views.addinventory,name='addinventory'),
+    path('taginventory/',views.taginventory,name='taginventory'),
     
     
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

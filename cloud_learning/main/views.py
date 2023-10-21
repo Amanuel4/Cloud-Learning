@@ -53,5 +53,43 @@ def pagination(request):
 
 
 def playbook(request):
+    taskstatus=1
+    task= Task.objects.all()
+    return render(request, 'main/playbook.html',{'taskstatus':taskstatus,
+                                                 'task':task})
     
-    return render(request, 'main/playbook.html',{})
+def adduser(request):
+    
+    return render(request,'main/adduser.html')
+
+def deleteuser(request):
+    
+	return render(request,'main/deleteuser.html')
+
+def lockuser(request):
+    
+    return render(request,'main/lockuser.html')
+
+def install_sw(request):
+    
+    return render(request,'main/install_sw.html')
+
+def remove_sw(request):
+    
+    return render(request,'main/remove_sw.html')
+
+def provision_cluster(request):
+    
+    return render(request,'main/provision_cluster.html')
+
+def deprovision_cluster(request):
+    
+    return render(request,'main/deprovision_cluster.html')
+
+def addinventory(request):
+    
+    return render(request,'main/addinventory.html')
+
+def taginventory(request):
+    
+    return render(request,'main/taginventory.html')

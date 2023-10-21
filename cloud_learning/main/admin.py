@@ -15,4 +15,6 @@ class BlogAdmin(admin.ModelAdmin):
      formfield_overrides = {
             models.TextField: {'widget':TinyMCE()}
                           }
+
 admin.site.register(Blog,BlogAdmin)
+admin.site.register(Task)

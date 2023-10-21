@@ -14,8 +14,9 @@ class Blog(models.Model):
         return self.author+' '+ '('+ self.title +')'
     
     
-class Tasks(models.Model):
+class Task(models.Model):
     name = models.CharField(max_length=100)
+    
     
     
     
