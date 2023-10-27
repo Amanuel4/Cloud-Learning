@@ -36,6 +36,7 @@ urlpatterns = [
     path('deprovision_cluster/',views.deprovision_cluster,name='deprovision_cluster'),
     path('addinventory/',views.addinventory,name='addinventory'),
     path('taginventory/',views.taginventory,name='taginventory'),
+    path('execute_usr_ad/',views.execute_usr_ad,name='execute_usr_ad'),
     
     
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

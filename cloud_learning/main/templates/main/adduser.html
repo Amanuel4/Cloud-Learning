@@ -9,7 +9,7 @@
 <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>Inventory Management System</title>
+<title>Automatation</title>
 
 <link rel="stylesheet" href=" {% static 'assets/css1/bootstrap.min.css' %} ">
 
@@ -34,11 +34,11 @@
 <div class="header">
 
 <div class="header-left active">
-<a href=" /index" class="logo">
+<a href=" /playbook" class="logo">
 <img src=" {% static 'assets/img1/safaricomEt.svg' %} " alt="">
 </a>
-<a href=" /index " class="logo-small">
-<img src=" {% static 'assets/img1/logo-small.png' %} " alt="">
+<a href=" /playbook " class="logo-small">
+<img src=" {% static 'assets/img1/safaricomEt.svg' %} " alt="">
 </a>
 <a id="toggle_btn" href=" {% static 'javascript:void(0);' %} ">
 </a>
@@ -156,8 +156,8 @@
 </div>
 </div>
 <form method="POST" action="">
-    {% csrf_token %}
-    {% for message in messages %}
+  {% csrf_token %}
+  {% for message in messages %}
 
 <div class="alert alert-success">
 <a class="close" href="#" data-dismiss="alert"></a>
@@ -169,29 +169,42 @@
 <div class="card">
 <div class="card-body">
 <div class="row">
-<div class=" col-12">
+<div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Username</label>
 <input type="text" name="username">
 </div>
 </div>
-<div class="col-12">
-    <div class="form-group">
+<div class="col-lg-3 col-sm-6 col-12">
+  <div class="form-group">
 <label>Password</label>
 <input type="password" name="passwd">
 </div>
 </div>
-
-<div class="col-12">
-    <div class="form-group">
-<label>Confirm Password</label>
+<div class="col-lg-3 col-sm-6 col-12">
+  <div class="form-group">
+<label>Confirm password</label>
 <input type="password" name="cpasswd">
 </div>
 </div>
 
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Inventory Group</label>
+<select class="select" name="inventory">
+  <option>Choose inverntory group</option>
+  <option>172.24.40.248</option>
+  {% for inv in inventory %}
+
+  <option>{{inv.name}}</option>
+   {% endfor %}
+
+  </select>
+</div>
+</div>
 <div class="col-lg-12">
-    <input type="submit"  class="btn btn-primary" value="Save">
-<a href=" /purchaselist " class="btn btn-primary">Cancel</a>
+<a href=" /execute_usr_ad " class="btn btn-submit">Save</a>
+<a href=" /adduser " class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </div>
@@ -202,29 +215,6 @@
 </div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 

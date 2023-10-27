@@ -4,6 +4,8 @@ from django.contrib.auth.models import *
 from django.core.files.base import ContentFile, File
 from django.contrib import messages
 from .models import *
+import subprocess
+
 
 #####pagination
 from django.core.paginator import (
@@ -93,3 +95,35 @@ def addinventory(request):
 def taginventory(request):
     
     return render(request,'main/taginventory.html')
+
+def execute_usr_ad(request):
+    
+    if request.method=="POST":
+        username = request.POST.get('username')
+        passwd = request.POST.get('passwd')
+        cpasswd= request.POST.get('cpasswd')
+        inventory= request.POST.get('inventory')
+        
+        with open('ansible/inventory', 'w') as file:
+            file.write(inventory)
+        task = 'ansible-playbook install_apache.yml --extra-vars "username=${username} passwd=${passwd}" '
+        subprocess.Popen(task, shell=True)
+        
+        messages.info(request," success!")
+        
+        return render(request,'main/adduser.html')
+         
+    return render(request,'main/adduser.html')
+        
+        
+            
+        
+            
+        
+            
+        
+            
+            
+        
+  
+        
