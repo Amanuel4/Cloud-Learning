@@ -96,6 +96,7 @@ def taginventory(request):
     
     return render(request,'main/taginventory.html')
 
+
 def execute_usr_ad(request):
     
     if request.method=="POST":
@@ -106,8 +107,7 @@ def execute_usr_ad(request):
         
         with open('ansible/inventory', 'w') as file:
             file.write(inventory)
-        
-        with open(r'ansible/adduser.yml', 'r') as file:
+	with open(r'ansible/adduser.yml', 'r') as file:
             data = file.read()
         
         data = data.replace('username', username)
@@ -117,9 +117,8 @@ def execute_usr_ad(request):
         with open(r'ansible/adduser.yml', 'w') as file:
             
             file.write(data)
-        
         task1= 'cd ansible'
-        task2 = 'ansible-playbook adduser.yml'
+        task2 = 'ansible-playbook adduser.yml --extra-vars "username=${username} passwd=${passwd}" '
         subprocess.Popen(task1, shell=True)
         subprocess.Popen(task2, shell=True)
         
@@ -128,13 +127,4 @@ def execute_usr_ad(request):
         return render(request,'main/adduser.html')
          
     return render(request,'main/adduser.html')
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
+

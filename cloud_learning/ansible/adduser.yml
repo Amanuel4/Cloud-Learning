@@ -2,14 +2,12 @@
 
 - hosts: all
   become: true
-  vars:
-      username: {{username}}
-      passwd: {{passwd}}
   tasks:
-    - name: add user {{username}} 
-      user: {{ username }}
-      password: "{{ passwd | password_hash('sha512') }}
+    - name: add user username 
+      user:
+        name: username
+        password: passwd
 
 
 
----
+
