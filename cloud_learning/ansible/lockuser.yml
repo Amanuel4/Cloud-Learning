@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: Lock user username 
+      user:
+        name: username
+	password_lock: true
+
+
+
+

@@ -1,0 +1,14 @@
+---
+- name: Create a VM from a template
+  hosts: all
+  gather_facts: no
+  connection: local
+  tasks:
+  - name: Clone VM
+    vmware_guest:
+      hostname: "it-m01-vc01.blueprint.lab"
+      username: "aman.essa@blueprint.lab"
+      password: "safariCom@25"
+      validate_certs: False
+      name: "new_demo_vm"
+      template: "bp-gmt-win2019"

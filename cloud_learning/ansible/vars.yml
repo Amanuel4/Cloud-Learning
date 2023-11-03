@@ -1,0 +1,8 @@
+---
+vcenter_hostname = "it-m01-vc01.blueprint.lab"
+vcenter_username = "aman.essa@blueprint.lab"
+vcenter_password = "safariCom@25"
+vm_name = "new_demo_vm"
+vcenter_template = "bp-gmt-win2019"
+vcenter_datacenter = "it-w01-DC"
+vcenter_folder = "GMT Engineers"

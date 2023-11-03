@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  vars:
+    username: "{{username}}"
+    passwd: "{{passwd}}"
+  tasks:
+    - name: add user
+      user:
+        name: "{{username}}"
+        password: "{{ passwd | password_hash('sha512') }}"
+

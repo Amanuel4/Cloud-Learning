@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: Lock user yabu 
+      user:
+        name: yabu
+	password_lock: true
+
+
+
+
